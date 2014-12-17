@@ -24,21 +24,31 @@ public class ActionServlet extends HttpServlet {
             //处理表单数据
             String uname = request.getParameter("uname");
             String pwd = request.getParameter("pwd");
-            if (uname.equals("1111")){
-                //验证成功
-                HttpSession session=request.getSession();
-                //绑定登录信息到seesion中
-                session.setAttribute("uname",uname);
-                //重定向到首页
-                response.sendRedirect("index.jsp");
-            }else {//验证失败
-                request.setAttribute("msg","用户名或密码错误");
-                request.getRequestDispatcher("login.jsp").forward(request,response);
+            //用户输入的验证码
+            String inCode = request.getParameter("txtCode");
+            //获取session中争取的验证码
+            HttpSession session = request.getSession();
+            String tCode = (String) session.getAttribute("c");
+            if (inCode.equals(tCode)) {
+                if (uname.equals("1111")) {
+                    //验证成功
+//                HttpSession session=request.getSession();
+                    //绑定登录信息到seesion中
+                    session.setAttribute("uname", uname);
+                    //重定向到首页
+                    response.sendRedirect("index.jsp");
+                }else{
+                    request.setAttribute("msg", "用户名或密码错误");
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
+                }
+            } else {//验证失败
+                request.setAttribute("code","验证码错误");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-        }else if(uri.equals("/logout")){
+        } else if (uri.equals("/logout")) {
             //获取session
-            HttpSession session=request.getSession();
-            //设置session失效
+            HttpSession session = request.getSession();
+//            设置session失效
             session.invalidate();
             response.sendRedirect("login.jsp");
         }

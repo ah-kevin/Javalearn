@@ -15,6 +15,8 @@
     username:<input name="uname">
     <%=request.getAttribute("msg")==null?"":(String)(request.getAttribute("msg"))%>
     <br>password:<input name="pwd" type="password"><br>
+    <input name="txtCode"/> <img src="code"/>
+    <%=request.getAttribute("code")==null?"":(String)(request.getAttribute("code"))%>
     <input type="submit" value="login">
   </form>
 </body>

@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -33,6 +34,9 @@ public class CodeServlet extends HttpServlet {
         g.setFont(new Font(null,Font.BOLD,24));
         //6.绘制字符串
         String number=getNumber(5);
+        //生成的验证码存到seesion中
+        HttpSession session=request.getSession();
+        session.setAttribute("c",number);
         g.drawString(number,4,22);
         //7.保存图片到流中,响应溜的数据格式
         response.setContentType("images/jpeg");

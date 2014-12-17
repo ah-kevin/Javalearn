@@ -11,6 +11,7 @@
     <title></title>
 </head>
 <body>
+<%--图片的来源是一个servlet生成的地址填写,访问servlet时对应的url-pattern--%>
   <img src="code"/>
 </body>
 </html>
