@@ -35,7 +35,14 @@ public class ActionServlet extends HttpServlet {
                 request.setAttribute("msg","用户名或密码错误");
                 request.getRequestDispatcher("login.jsp").forward(request,response);
             }
+        }else if(uri.equals("/logout")){
+            //获取session
+            HttpSession session=request.getSession();
+            //设置session失效
+            session.invalidate();
+            response.sendRedirect("login.jsp");
         }
+        out.close();
     }
 
 }

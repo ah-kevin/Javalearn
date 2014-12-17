@@ -20,5 +20,6 @@
 </head>
 <body>
 欢迎你:<%=(String)session.getAttribute("uname")%>
+<a href="logout.do">登出</a>
 </body>
 </html>
