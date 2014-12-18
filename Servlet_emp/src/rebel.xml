@@ -2,13 +2,13 @@
 <application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
 
 	<classpath>
-		<dir name="E:/learn/java/Javalearn/out/production/Servlet_08">
+		<dir name="E:/java/Javalearn/out/production/Servlet_emp">
 		</dir>
 	</classpath>
 
 	<web>
 		<link target="/">
-			<dir name="E:/learn/java/Javalearn/Servlet_08/web">
+			<dir name="E:/java/Javalearn/Servlet_emp/web">
 			</dir>
 		</link>
 	</web>

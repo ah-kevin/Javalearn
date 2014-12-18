@@ -51,6 +51,9 @@
     <button type="submit" class="btn btn-primary">查询</button>
     &nbsp;&nbsp;
     <button type="button" class="btn btn-success" id="addnew" onclick="location='addEmp.jsp'">新增用户</button>
+    <a href="logout.do">
+    <button type="button" class="btn btn-primary" >登出</button>
+    </a>
 </form>
 <table class="table table-bordered table-hover definewidth m10">
     <thead>
