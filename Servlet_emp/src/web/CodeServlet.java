@@ -35,6 +35,11 @@ public class CodeServlet extends HttpServlet {
         g.setFont(new Font(null,Font.BOLD,24));
         //6.绘制字符串
         String number=getNumber(5);
+        //7.绘制4条干扰线
+        for(int i=0;i<4;i++){
+            g.setColor(new Color(r.nextInt(255),r.nextInt(255),r.nextInt(255),r.nextInt(255)));
+            g.drawLine(r.nextInt(100), r.nextInt(30), r.nextInt(100), r.nextInt(30));
+        }
         //生成的验证码存到seesion中
         HttpSession session=request.getSession();
         session.setAttribute("c",number);
