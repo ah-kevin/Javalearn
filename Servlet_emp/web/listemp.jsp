@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" import="java.util.*" %>
 <%@ page import="entity.Employee" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -65,29 +66,38 @@
         <th>操作</th>
     </tr>
     </thead>
-    <%
-        //重request中取绑定的数据
-        List<Employee> emps=(List<Employee>)request.getAttribute("allEmp");
-        //显示数据
-        for (int i=0;i<emps.size();i++){
-            Employee e =emps.get(i);
+    <%--<%--%>
+        <%--//重request中取绑定的数据--%>
+        <%--List<Employee> emps=(List<Employee>)request.getAttribute("allEmp");--%>
+        <%--//显示数据--%>
+        <%--for (int i=0;i<emps.size();i++){--%>
+            <%--Employee e =emps.get(i);--%>
 
-    %>
-    <tr>
+    <%--%>--%>
+    <c:forEach var="e" items="${allEmp}" varStatus="x">
+    <tr class="row${x.index%2+1}">
         <td>
-            <%=e.getId()%>
+            <%--<%=e.getId()%>--%>
+            ${e.id}
         </td>
         <td>
-            <%=e.getName()%>
+            <%--<%=e.getName()%>--%>
+            ${e.name}
         </td>
-        <td><%=e.getSalary()%></td>
-        <td><%=e.getAge()%></td>
         <td>
-            <a href="load.do?id=<%=e.getId()%>">编辑</a>&nbsp;&nbsp;
-            <a href="del.do?id=<%=e.getId()%>" onclick="return confirm('确认删除<%=e.getName()%>吗?')">删除</a>
+            <%--<%=e.getSalary()%>--%>
+             ${e.salary}
+        </td>
+        <td>
+            <%--<%=e.getAge()%>--%>
+             ${e.age}
+        </td>
+        <td>
+            <a href="load.do?id=${e.id}%>">编辑</a>&nbsp;&nbsp;
+            <a href="del.do?id=${e.id}" onclick="return confirm('确认删除${e.name}吗?')">删除</a>
         </td>
     </tr>
-    <% }%>
+    </c:forEach>
 </table>
 </body>
 </html>

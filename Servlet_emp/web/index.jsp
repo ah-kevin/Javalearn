@@ -61,7 +61,8 @@
   <form class="form-signin" method="post" action="index.do">
     <h2 class="form-signin-heading">登录系统</h2>
     <input type="text" name="username" class="input-block-level" placeholder="用户名">
-    <%=(request.getAttribute("msg") == null) ? " " : (String) (request.getAttribute("msg"))%>
+    <%--<%=(request.getAttribute("msg") == null) ? " " : (String) (request.getAttribute("msg"))%>--%>
+    ${msg}
     <input type="text" name="name" class="input-block-level" placeholder="真实姓名">
     <input type="password" name="pwd" class="input-block-level" placeholder="密码">
     <p>
@@ -71,7 +72,8 @@
       <input type="radio" name="sex" class="input-medium" value="f">
     </p>
    <P>
-    <%=(request.getAttribute("c_msg") == null) ? " " : (String) (request.getAttribute("c_msg"))%>
+    <%--<%=(request.getAttribute("c_msg") == null) ? " " : (String) (request.getAttribute("c_msg"))%>--%>
+     ${c_msg}
      </P>
     <input type="text" name="number" class="input-medium" placeholder="验证码">
     <img src="code"  style="width: 100px;height: 35px;padding-bottom: 15px;cursor: pointer;" onclick="this.src='code?'+(new Date()).getTime()" href="javascript:;">

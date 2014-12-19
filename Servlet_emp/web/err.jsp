@@ -13,9 +13,10 @@
   <title></title>
 </head>
 <body>
-<%
-  String ms =request.getAttribute("msg").toString();
-%>
-<h1><%=ms%></h1>
+<%--<%--%>
+  <%--String ms =request.getAttribute("msg").toString();--%>
+<%--%>--%>
+<%--<h1><%=ms%></h1>--%>
+<h1>${msg}</h1>
 </body>
 </html>

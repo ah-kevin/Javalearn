@@ -1,5 +1,6 @@
 package web;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,5 +23,6 @@ public class CommentServlet extends HttpServlet {
         //输出提交的评论
         out.print("<h1>评论是:"+comn+"</h1>");
         out.close();
+
     }
 }

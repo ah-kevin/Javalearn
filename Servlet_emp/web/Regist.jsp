@@ -72,7 +72,8 @@
 
     <td>
       <input type="text" name="number" class="input-medium" placeholder="验证码">
-        <%=(request.getAttribute("c_msg") == null) ? " " : (String) (request.getAttribute("c_msg"))%>
+        <%--<%=(request.getAttribute("c_msg") == null) ? " " : (String) (request.getAttribute("c_msg"))%>--%>
+      ${c_msg}
       <img src="code"  style="width: 100px;height: 35px;padding-bottom: 15px;cursor: pointer;" onclick="this.src='code?'+(new Date()).getTime()" href="javascript:;">
     </td>
 
